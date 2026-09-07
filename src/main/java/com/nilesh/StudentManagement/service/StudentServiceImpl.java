@@ -4,6 +4,7 @@ package com.nilesh.StudentManagement.service;
 import com.nilesh.StudentManagement.dto.StudentRequestDTO;
 import com.nilesh.StudentManagement.dto.StudentResponseDTO;
 import com.nilesh.StudentManagement.entity.Student;
+import com.nilesh.StudentManagement.exception.StudentNotFoundException;
 import com.nilesh.StudentManagement.mapper.StudentMapper;
 import com.nilesh.StudentManagement.repository.StudentRepository;
 
@@ -68,7 +69,7 @@ public class StudentServiceImpl implements StudentService {
     public StudentResponseDTO updateStudent(StudentRequestDTO studentRequestDTO, Long id) {
 
         // fetch the student from databse using id
-        Student existingstudent = studentRepository.findById(id).orElseThrow(() -> new RuntimeException("Student with this id not found"));
+        Student existingstudent = studentRepository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student with this id not found"));
 
 
         Student updateStudent = studentMapper.RequestTOEntity(studentRequestDTO);
@@ -90,7 +91,7 @@ public class StudentServiceImpl implements StudentService {
     public String deleteStudent(Long id) {
         // check if id exist
 
-        Student existingstudent = studentRepository.findById(id).orElseThrow(() -> new RuntimeException("Student with this id not Found"));
+        Student existingstudent = studentRepository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student with this id not Found"));
 
         studentRepository.deleteById(id);
         return "Student Deleted Successfully";
@@ -106,7 +107,7 @@ public class StudentServiceImpl implements StudentService {
                         findByNameContainingIgnoreCase(name);
 
         if (searchStudent.isEmpty()) {
-            throw new RuntimeException("Studnet not found" + name);
+            throw new StudentNotFoundException("Studnet not found" + name);
         }
 
         List<StudentResponseDTO> studentRes = searchStudent.stream().map(
@@ -125,7 +126,7 @@ public class StudentServiceImpl implements StudentService {
         List<Student> studentgetByage = studentRepository.findByAgeGreaterThanEqual(age);
 
         if (studentgetByage.isEmpty()) {
-            throw new RuntimeException("Student Not found in this age " + age);
+            throw new StudentNotFoundException("Student Not found in this age " + age);
         }
 
         return studentgetByage.stream().map(
@@ -138,7 +139,7 @@ public class StudentServiceImpl implements StudentService {
         List<Student> studentgetByage = studentRepository.findByAgeAndCourseIgnoreCase(age, course);
 
         if (studentgetByage.isEmpty()) {
-            throw new RuntimeException("Student Not found in this age " + age);
+            throw new StudentNotFoundException("Student Not found in this age " + age);
         }
 
         return studentgetByage.stream().map(
@@ -152,7 +153,7 @@ public class StudentServiceImpl implements StudentService {
         List<Student> studentgetBycourse = studentRepository.findByCourse(course);
 
         if (studentgetBycourse.isEmpty()) {
-            throw new RuntimeException("Student Not found in this course " + course);
+            throw new StudentNotFoundException("Student Not found in this course " + course);
         }
 
         return studentgetBycourse.stream().map(

@@ -37,13 +37,17 @@ public class GlobalExceptionHandler {
                                                                HttpServletRequest httpServletRequest) {
 
 
-        String message = String.valueOf(ex.getBindingResult().getFieldError());
+        String message = String.valueOf(ex.getBindingResult()
+                .getFieldErrors()
+                .stream()
+                .map(err -> err.getField() +":" + err.getDefaultMessage())
+                .toList());
 
         ErrorResponse errorResponse = new ErrorResponse(
                 LocalDateTime.now(),
                 "Validation failed",
                 HttpStatus.BAD_REQUEST.value(),
-                ex.getMessage(),
+                message,
                 httpServletRequest.getRequestURI()
         );
 
