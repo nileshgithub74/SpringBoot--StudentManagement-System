@@ -132,4 +132,32 @@ public class StudentServiceImpl implements StudentService {
                 studentMapper::EntityToResponse
         ).toList();
     }
+
+    @Override
+    public List<StudentResponseDTO> findStudentByAgeAndCourse(Integer age, String course) {
+        List<Student> studentgetByage = studentRepository.findByAgeAndCourseIgnoreCase(age, course);
+
+        if (studentgetByage.isEmpty()) {
+            throw new RuntimeException("Student Not found in this age " + age);
+        }
+
+        return studentgetByage.stream().map(
+                studentMapper::EntityToResponse
+        ).toList();
+
+    }
+
+    @Override
+    public List<StudentResponseDTO> findByCourse(String course) {
+        List<Student> studentgetBycourse = studentRepository.findByCourse(course);
+
+        if (studentgetBycourse.isEmpty()) {
+            throw new RuntimeException("Student Not found in this course " + course);
+        }
+
+        return studentgetBycourse.stream().map(
+                studentMapper::EntityToResponse
+        ).toList();
+    }
+
 }

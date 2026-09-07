@@ -18,6 +18,8 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     List<Student> findByAgeGreaterThanEqual(int age);
 
+    List<Student> findByCourse(String course);
+
 
     @Query(
             """

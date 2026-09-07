@@ -35,6 +35,7 @@ public class StudentController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(student);
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<StudentResponseDTO> getStudent(@PathVariable Long id) {
         StudentResponseDTO student = studentService.getStudent(id);
@@ -53,34 +54,51 @@ public class StudentController {
                                                             @Valid @RequestBody
                                                             StudentRequestDTO studentRequestDTO
     ) {
-         StudentResponseDTO responseData =   studentService.updateStudent(studentRequestDTO, id);
+        StudentResponseDTO responseData = studentService.updateStudent(studentRequestDTO, id);
 
-         return ResponseEntity.status(HttpStatus.OK).body(responseData);
+        return ResponseEntity.status(HttpStatus.OK).body(responseData);
 
     }
 
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteStudent(@PathVariable Long id){
+    public ResponseEntity<String> deleteStudent(@PathVariable Long id) {
 
-        String  deletedStudent =     studentService.deleteStudent(id);
+        String deletedStudent = studentService.deleteStudent(id);
         return ResponseEntity.status(HttpStatus.OK).body(deletedStudent);
     }
 
     // search
     @GetMapping("/search")
-    public ResponseEntity<List<StudentResponseDTO>> searchStudent(@RequestParam  String name){
-      List<StudentResponseDTO>  searchedStudent =    studentService.serchStudent(name);
-      return ResponseEntity.status(HttpStatus.OK).body(searchedStudent);
+    public ResponseEntity<List<StudentResponseDTO>> searchStudent(@RequestParam String name) {
+        List<StudentResponseDTO> searchedStudent = studentService.serchStudent(name);
+        return ResponseEntity.status(HttpStatus.OK).body(searchedStudent);
 
     }
 
 
     @GetMapping("/filter")
-    public ResponseEntity<List<StudentResponseDTO>>  findStudentByAge(@RequestParam  Integer age){
-            List<StudentResponseDTO> allstudent =   studentService.findStudentByAge(age);
-            return ResponseEntity.status(HttpStatus.OK).body(allstudent);
+    public ResponseEntity<List<StudentResponseDTO>> findStudentByAge(@RequestParam Integer age) {
+        List<StudentResponseDTO> allstudent = studentService.findStudentByAge(age);
+        return ResponseEntity.status(HttpStatus.OK).body(allstudent);
 
     }
+
+    @GetMapping("/filter/course/age")
+
+    public ResponseEntity<List<StudentResponseDTO>> findStudentByAgeCourse(@RequestParam Integer age, @RequestParam String course) {
+        List<StudentResponseDTO> allstudent = studentService.findStudentByAgeAndCourse(age, course);
+        return ResponseEntity.status(HttpStatus.OK).body(allstudent);
+
+    }
+
+
+    @GetMapping("/filter/course")
+    public ResponseEntity<List<StudentResponseDTO>> findStudentByAgeCourse(@RequestParam String course) {
+        List<StudentResponseDTO> allstudent = studentService.findByCourse(course);
+        return ResponseEntity.status(HttpStatus.OK).body(allstudent);
+
+    }
+
 
 }

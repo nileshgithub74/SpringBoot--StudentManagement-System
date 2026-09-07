@@ -18,4 +18,6 @@ public interface StudentService {
     List<StudentResponseDTO> serchStudent(String name);
 
     List<StudentResponseDTO> findStudentByAge(Integer age);
+    List<StudentResponseDTO> findStudentByAgeAndCourse(Integer age, String course);
+    List<StudentResponseDTO> findByCourse( String course);
 }
