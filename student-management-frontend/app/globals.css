@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f8f5;
+  --ink: #183637;
+  --muted: #718080;
+  --line: #e2e9e5;
+  --accent: #e2c044;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--ink);
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-display {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+  @apply inline-flex min-h-11 items-center justify-center px-5 text-[13px] font-bold;
+}
+
+.btn-primary {
+  @apply bg-[#183f3e] text-white hover:bg-[#285f58];
+}
+
+.btn-secondary {
+  @apply border border-[var(--line)] bg-white text-[var(--ink)] hover:border-[#9fb8ae];
+}
+
+.btn-danger {
+  @apply bg-[#b93737] text-white;
+}
+
+.field {
+  @apply flex flex-col gap-2 text-[13px] font-bold text-[var(--ink)];
+}
+
+.field input,
+.field select {
+  @apply h-11 border border-[#d9e2dd] bg-white px-3 text-sm font-normal text-[var(--ink)] outline-none focus:border-[#5f9b88] focus:ring-3 focus:ring-[#e2f1eb];
+}
+
+.field small {
+  @apply font-normal text-[#b93737];
+}
+
+.input-error {
+  border-color: #d98383 !important;
+}
+
+.status-pill {
+  @apply bg-[#e5f4ed] px-2 py-1 text-[10px] font-extrabold tracking-wider text-[#2d8269];
+}
+
+.loader-dot {
+  @apply h-3.5 w-3.5 animate-spin rounded-full border-2 border-[#c9ddd4] border-t-[#2d8269];
+}

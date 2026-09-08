@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Next.js frontend ###
+student-management-frontend/node_modules/
+student-management-frontend/.next/
+student-management-frontend/out/
+student-management-frontend/.env*
+student-management-frontend/next-env.d.ts
+student-management-frontend/*.tsbuildinfo
