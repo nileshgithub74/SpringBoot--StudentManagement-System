@@ -37,6 +37,7 @@ public class AuthServices {
         // hash the password;
 
         String hashedPassword = passwordEncoder.encode(registerDTO.getPassword());
+        System.out.println(hashedPassword);
         user.setPassword(hashedPassword);
 
         user.setRoles("USER");
