@@ -3,12 +3,12 @@
 import ErrorMessage from "@/components/common/ErrorMessage";
 import Loader from "@/components/common/Loader";
 import AppShell from "@/components/layout/AppShell";
-import { getStudentById } from "@/services/studentService";
-import type { Student } from "@/types/student";
-import { formatDate } from "@/utils/helpers";
-import { ArrowLeft, Pencil } from "lucide-react";
+import {getStudentById} from "@/services/studentService";
+import type {Student} from "@/types/student";
+import {formatDate} from "@/utils/helpers";
+import {ArrowLeft, Pencil} from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 
 interface StudentDetailsPageProps {
     params: Promise<{ id: string }>;

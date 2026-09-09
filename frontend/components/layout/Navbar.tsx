@@ -1,7 +1,7 @@
 "use client";
 
-import { useAuth } from "@/hooks/useAuth";
-import { Bell, Menu, Search } from "lucide-react";
+import {useAuth} from "@/hooks/useAuth";
+import {Bell, Menu, Search} from "lucide-react";
 import Link from "next/link";
 
 export default function Navbar() {

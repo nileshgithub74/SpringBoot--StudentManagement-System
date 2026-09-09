@@ -1,13 +1,13 @@
 "use client";
 
 import ErrorMessage from "@/components/common/ErrorMessage";
-import { createStudent, updateStudent } from "@/services/studentService";
-import type { Student, StudentRequest } from "@/types/student";
-import { COURSES } from "@/utils/constants";
-import { getErrorMessage } from "@/utils/helpers";
-import { validateStudent, type FormErrors } from "@/utils/validation";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import {createStudent, updateStudent} from "@/services/studentService";
+import type {Student, StudentRequest} from "@/types/student";
+import {COURSES} from "@/utils/constants";
+import {getErrorMessage} from "@/utils/helpers";
+import {type FormErrors, validateStudent} from "@/utils/validation";
+import {useRouter} from "next/navigation";
+import {useState} from "react";
 
 const emptyForm: StudentRequest = {
     name: "",

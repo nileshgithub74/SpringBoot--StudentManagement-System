@@ -1,9 +1,9 @@
 "use client";
 
-import { login } from "@/services/authService";
-import { getErrorMessage } from "@/utils/helpers";
-import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
+import {login} from "@/services/authService";
+import {getErrorMessage} from "@/utils/helpers";
+import {useRouter} from "next/navigation";
+import {FormEvent, useState} from "react";
 
 const LoginPage = () => {
     const router = useRouter();

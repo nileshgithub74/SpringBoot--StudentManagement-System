@@ -1,5 +1,5 @@
 import api from "@/services/api";
-import type { Student, StudentRequest } from "@/types/student";
+import type {Student, StudentRequest} from "@/types/student";
 
 interface StudentResponseDTO {
     id: number;

@@ -1,9 +1,9 @@
 "use client";
 
-import { getStudents } from "@/services/studentService";
-import type { Student } from "@/types/student";
-import { getErrorMessage } from "@/utils/helpers";
-import { useCallback, useEffect, useState } from "react";
+import {getStudents} from "@/services/studentService";
+import type {Student} from "@/types/student";
+import {getErrorMessage} from "@/utils/helpers";
+import {useCallback, useEffect, useState} from "react";
 
 export const useStudents = () => {
     const [students, setStudents] = useState<Student[]>([]);

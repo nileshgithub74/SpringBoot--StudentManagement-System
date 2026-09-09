@@ -1,4 +1,4 @@
-import { API_URL, TOKEN_KEY } from "@/utils/constants";
+import {API_URL, TOKEN_KEY} from "@/utils/constants";
 import axios from "axios";
 
 const http = axios.create({

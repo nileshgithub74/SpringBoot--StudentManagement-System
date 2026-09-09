@@ -4,8 +4,8 @@ import ErrorMessage from "@/components/common/ErrorMessage";
 import Loader from "@/components/common/Loader";
 import AppShell from "@/components/layout/AppShell";
 import StudentCard from "@/components/students/StudentCard";
-import { useStudents } from "@/hooks/useStudents";
-import { GraduationCap, Plus, Users } from "lucide-react";
+import {useStudents} from "@/hooks/useStudents";
+import {GraduationCap, Plus, Users} from "lucide-react";
 import Link from "next/link";
 
 const DashboardPage = () => {

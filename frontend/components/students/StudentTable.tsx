@@ -1,8 +1,8 @@
 "use client";
 
-import type { Student } from "@/types/student";
-import { formatDate, initials } from "@/utils/helpers";
-import { Eye, Pencil, Trash2 } from "lucide-react";
+import type {Student} from "@/types/student";
+import {formatDate, initials} from "@/utils/helpers";
+import {Eye, Pencil, Trash2} from "lucide-react";
 import Link from "next/link";
 
 export default function StudentTable({

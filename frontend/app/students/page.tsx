@@ -6,10 +6,10 @@ import Loader from "@/components/common/Loader";
 import AppShell from "@/components/layout/AppShell";
 import StudentCard from "@/components/students/StudentCard";
 import StudentTable from "@/components/students/StudentTable";
-import { useStudents } from "@/hooks/useStudents";
-import { Plus, Search } from "lucide-react";
+import {useStudents} from "@/hooks/useStudents";
+import {Plus, Search} from "lucide-react";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import {useMemo, useState} from "react";
 
 const StudentsPage = () => {
     const { students, loading, error, refresh } = useStudents();

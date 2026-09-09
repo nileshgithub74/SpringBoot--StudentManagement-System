@@ -1,6 +1,6 @@
-import type { Student } from "@/types/student";
-import { initials } from "@/utils/helpers";
-import { ArrowUpRight } from "lucide-react";
+import type {Student} from "@/types/student";
+import {initials} from "@/utils/helpers";
+import {ArrowUpRight} from "lucide-react";
 import Link from "next/link";
 
 const StudentCard = ({ student }: { student: Student }) => (

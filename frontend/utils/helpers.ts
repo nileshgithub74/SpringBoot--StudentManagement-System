@@ -1,5 +1,5 @@
-import type { ApiErrorResponse } from "@/types/api";
-import type { AxiosError } from "axios";
+import type {ApiErrorResponse} from "@/types/api";
+import type {AxiosError} from "axios";
 
 export function getErrorMessage(
   error: unknown,

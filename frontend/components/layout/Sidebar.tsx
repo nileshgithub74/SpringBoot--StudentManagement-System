@@ -1,8 +1,8 @@
 "use client";
 
-import { GraduationCap, LayoutDashboard, Settings } from "lucide-react";
+import {GraduationCap, LayoutDashboard, Settings} from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import {usePathname} from "next/navigation";
 
 export default function Sidebar() {
   const path = usePathname();

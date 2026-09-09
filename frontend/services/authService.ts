@@ -1,6 +1,6 @@
 import api from "@/services/api";
-import type { AuthResponse, LoginRequest, RegisterRequest } from "@/types/auth";
-import { TOKEN_KEY, USER_KEY } from "@/utils/constants";
+import type {AuthResponse, LoginRequest, RegisterRequest} from "@/types/auth";
+import {TOKEN_KEY, USER_KEY} from "@/utils/constants";
 
 export async function login(credentials: LoginRequest): Promise<AuthResponse> {
   const { data } = await api.post<AuthResponse>("/auth/login", credentials);

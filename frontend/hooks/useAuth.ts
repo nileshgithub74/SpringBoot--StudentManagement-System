@@ -1,6 +1,6 @@
 "use client";
 
-import { logout as logoutService } from "@/services/authService";
+import {logout as logoutService} from "@/services/authService";
 
 export const useAuth = () => {
     return {

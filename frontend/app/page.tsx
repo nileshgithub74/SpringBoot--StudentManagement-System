@@ -1,8 +1,8 @@
 "use client";
 
 import Loader from "@/components/common/Loader";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import {useRouter} from "next/navigation";
+import {useEffect} from "react";
 
 const Home = () => {
   const router = useRouter();

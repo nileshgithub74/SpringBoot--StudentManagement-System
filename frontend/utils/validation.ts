@@ -1,4 +1,4 @@
-import type { StudentRequest } from "@/types/student";
+import type {StudentRequest} from "@/types/student";
 
 export type FormErrors = Partial<Record<keyof StudentRequest, string>>;
 
